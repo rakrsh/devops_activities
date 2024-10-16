@@ -1,0 +1,17 @@
+name: Setup WSL
+
+on: [push, pull_request]
+
+jobs:
+  setup-wsl:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Install WSL
+        run: |
+          wsl --install
+          wsl --set-default-version 2
+        shell: pwsh
