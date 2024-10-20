@@ -32,3 +32,12 @@ jobs:
 
       - name: Run Cypress tests
         run: npx cypress run
+
+      - name: Generate and upload system specs
+        run: PowerShell -File ./export_system_specs.ps1
+
+      - name: Upload system specs
+        uses: actions/upload-artifact@v2
+        with:
+          name: system-specs
+          path:
