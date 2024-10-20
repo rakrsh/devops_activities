@@ -29,6 +29,12 @@ jobs:
   
       - name: Install dependencies
         run: npm install
+      
+      - name: Start the server
+        run: npx start &
+
+      - name: Wait for server to be ready
+        run: sleep 10
 
       - name: Run Cypress tests
         run: npx cypress run
@@ -40,4 +46,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: system-specs
-          path:
+          path: system_specs.txt
