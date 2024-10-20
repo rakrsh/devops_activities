@@ -24,9 +24,10 @@ jobs:
 
       - name: Setup WSL environment
         run: |
-          wsl sudo apt update
-          wsl sudo apt upgrade -y
-          wsl sudo apt-get install -y nodejs
+          wsl
+          sudo apt update
+          sudo apt upgrade -y
+          sudo apt-get install -y nodejs
   
       - name: Force clean install dependencies
         run: wsl npm install --force
