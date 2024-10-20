@@ -22,16 +22,18 @@ jobs:
           python --version
         shell: pwsh
 
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+      - name: Setup WSL environment
+        run: |
+          wsl sudo apt update
+          wsl sudo apt upgrade -y
+          wsl curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+          wsl sudo apt-get install -y nodejs
   
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Start the server
-        run: npx start &
+      - name: Force clean install dependencies
+        run: wsl npm install --force
+
+      - name: Start the server and run Cypress tests
+        run: wsl npm start
 
       - name: Wait for server to be ready
         run: sleep 10
