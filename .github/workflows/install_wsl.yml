@@ -16,8 +16,7 @@ jobs:
       
       - name: Install WSL
         run: |
-          wsl --install -d Ubuntu
-          wsl --set-default-version 2
+          wsl --install
         shell: pwsh
       
       - name: Check python in WSL
