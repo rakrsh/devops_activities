@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       
       - name: Install WSL
         run: |
@@ -37,7 +37,7 @@ jobs:
         run: PowerShell -File ./export_system_specs.ps1
 
       - name: Upload system specs
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: system-specs
           path:
