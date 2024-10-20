@@ -1,12 +1,14 @@
 {
-    "name": "project-name",
+    "name": "your-project-name",
     "version": "1.0.0",
-    "description": "A project with Cypress and npx",
+    "description": "A project with Cypress and Express",
     "scripts": {
-        "start": "node server.js",
-        "test": "cypress run"
-        },
-    "dependencies": {},
+      "start": "node server.js && npx cypress run cypress/integration/sample_test.spec.js",
+      "test": "cypress run"
+    },
+    "dependencies": {
+      "express": "^4.17.1"
+    },
     "devDependencies": {
       "cypress": "^12.0.0"
     }
