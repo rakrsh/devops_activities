@@ -3,8 +3,9 @@
     "version": "1.0.0",
     "description": "A project with Cypress and npx",
     "scripts": {
-      "test": "cypress run"
-    },
+        "start": "node server.js",
+        "test": "cypress run"
+        },
     "dependencies": {},
     "devDependencies": {
       "cypress": "^12.0.0"
